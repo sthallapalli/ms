@@ -5,18 +5,22 @@ spring:
   application:
     name: auth-service
     datasource:
+        driver-class-name: org.postgresql.Driver
         password: postgres
+        testWhileIdle: true
         url: jdbc:postgresql://localhost:5432/postgres
         username: postgres
+        validationQuery: SELECT 1
     jpa:
         hibernate:
-            ddl-auto: validate
+            ddl-auto: create-drop
+            naming:
+                implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyHbmImpl
+                physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
         properties:
             hibernate:
-                dialect: org.hibernate.dialect.PostgreSQL95Dialect
-                format_sql: true
-                id:
-                    new_generator_mappings: true
+                dialect: org.hibernate.dialect.PostgreSQLDialect
+        show-sql: true
 
 eureka:
     client:
