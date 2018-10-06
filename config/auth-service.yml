@@ -1,0 +1,30 @@
+server:
+  port: 8764
+
+spring:
+  application:
+    name: auth-service
+
+eureka:
+    client:
+        region: default
+        registryFetchIntervalSeconds: 5
+        serviceUrl:
+            defaultZone: http://localhost:8761/eureka/
+flyway:
+    baselineOnMigrate: true
+    locations: db/migration
+spring:
+    datasource:
+        password: postgres
+        url: jdbc:postgresql://localhost:5432/postgres
+        username: postgres
+    jpa:
+        hibernate:
+            ddl-auto: validate
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.PostgreSQL95Dialect
+                format_sql: true
+                id:
+                    new_generator_mappings: true
