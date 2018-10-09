@@ -20,4 +20,5 @@ security:
       userAuthorizationUri: https://www.facebook.com/dialog/oauth
     resource:
       id: employee-service
+      userInfoUri: BUGFIX
 
