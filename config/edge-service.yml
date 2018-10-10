@@ -23,13 +23,3 @@ ribbon:
   ConnectTimeout: 3000
   ReadTimeout: 60000
 
-security:
-  oauth2:
-    client:
-      clientId: employee-service
-      clientSecret: password
-      accessTokenUri: https://localhost:8764/oauth/access_token
-      userAuthorizationUri: https://www.facebook.com/dialog/oauth
-    resource:
-      id: employee-service
-      userInfoUri: BUGFIX
