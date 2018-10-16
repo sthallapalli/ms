@@ -1,0 +1,12 @@
+server:
+    port: 8761
+management:
+    security:
+        enabled: false
+spring:
+    application:
+        name: discovery-service
+    cloud:
+        config:
+            uri: http://localhost:8888
+            failFast: true
