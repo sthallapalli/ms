@@ -1,7 +1,13 @@
 package com.srinivas.spring.ms.department.model;
 
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
 public class Department {
 
+    @Id
     private Long id;
     private String name;
 
